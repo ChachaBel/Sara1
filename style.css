@@ -53,7 +53,7 @@ body {
 /* HERO */
 .hero {
   min-height: 180vh;
-  background-image: url("images/logo.png");
+  background-image: url("images/logo.webp");
   background-repeat: no-repeat;
   background-size: cover;            /* 👈 تعمّر */
   background-position: center;/* 👈 وسط */
