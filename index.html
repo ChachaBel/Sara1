@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>BY_SK | Boutique Femme</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+<header class="header">
+  <div class="brand">
+    <h1>BY_SK</h1>
+    <span>BOUTIQUE</span>
+  </div>
+
+  <nav class="menu">
+    <a href="#">HOME</a>
+    <a href="#">SHOP</a>
+    <a href="#">COLLECTION</a>
+    <a href="#">FAQ</a>
+    <a href="#">CONTACT</a>
+  </nav>
+</header>
+
+
+  <!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay">
+    <div class="hero-box">
+      <span class="script-text">Bright vibes</span>
+      <h1 class="reveal-text">BY_SK</h1>
+      <p class="subtitle">BOUTIQUE</p>
+      <button class="hero-btn">SHOP NOW</button>
+    </div>
+  </div>
+</section>
+<section class="parallax-section">
+  <div class="section-title reveal">
+    <h3 class="fade-title">SOPHISTICATION & CONVENIENCE</h3>
+    <span class="title-line"></span>
+    <p class="fade-text">
+      Découvrez la nouvelle collection BY_SK, élégance moderne pour la femme confiante.
+    </p>
+  </div>
+</section>
+
+
+  <!-- CATEGORIES -->
+<section class="categories-section">
+
+  <div class="categories">
+    <div class="category-card">
+      <span class="cat-label">Robes</span>
+      <img src="images/robes.png" alt="Robes">
+    </div>
+
+    <div class="category-card">
+      <span class="cat-label">Ensembles</span>
+      <img src="images/ensembles.png" alt="Ensembles">
+    </div>
+
+    <div class="category-card">
+      <span class="cat-label">Manteaux</span>
+      <img src="images/Manteaux.png" alt="Manteaux">
+    </div>
+  </div>
+</section>
+
+  <!-- PRODUCTS -->
+<section class="products-section">
+  <div class="section-title reveal">
+    <h3 class="fade-title">FEATURED PRODUCTS</h3>
+    <span class="title-line"></span>
+    <p class="fade-text">
+      Sélection exclusive BY_SK – élégance, qualité et modernité.
+    </p>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card reveal">
+      <div class="product-img">
+        <img src="images/robe-verte.png" alt="Robe verte">
+      </div>
+      <h4>Robe élégante</h4>
+      <span>3000 DA</span>
+      <button class="order-btn" onclick="openLock()">COMMANDER</button>
+
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img">
+        <img src="images/ensemble-noir.png" alt="Ensemble noir">
+      </div>
+      <h4>Ensemble moderne</h4>
+      <span>4000 DA</span>
+      <button class="order-btn" onclick="openLock()">COMMANDER</button>
+
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img">
+        <img src="images/manteau-marron.png" alt="Manteau">
+      </div>
+      <h4>Manteau chic</h4>
+      <span> 4900 DA</span>
+      <button class="order-btn" onclick="openLock()">COMMANDER</button>
+
+    </div>
+
+    <div class="product-card reveal">
+      <div class="product-img">
+        <img src="images/manteau-fourrure.png" alt="Manteau luxe">
+      </div>
+      <h4>Manteau premium</h4>
+      <span> 3900 DA</span>
+      <button class="order-btn" onclick="openLock()">COMMANDER</button>
+
+    </div>
+  </div>
+  <div class="lock-modal" id="lockModal">
+  <div class="lock-box">
+    <span class="lock-icon">🔒</span>
+    <h3>Connexion requise</h3>
+    <p>
+      Pour passer commande, veuillez vous connecter ou créer un compte.
+    </p>
+
+    <div class="lock-actions">
+      <button class="login-btn">Se connecter</button>
+      <button class="register-btn">Créer un compte</button>
+    </div>
+
+    <span class="close-lock" onclick="closeLock()">✕</span>
+  </div>
+</div>
+
+</section>
+
+
+ <!-- SUBSCRIBE -->
+<section class="subscribe-section">
+  <div class="subscribe-box reveal">
+    <h3>Subscribe for special offers</h3>
+    <p>Recevez les nouveautés BY_SK et des offres exclusives.</p>
+
+    <form class="subscribe-form">
+      <input type="email" placeholder="Votre email">
+      <button>S'inscrire</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <h2>BY_SK</h2>
+    <span>BOUTIQUE</span>
+  </div>
+
+  <div class="footer-links">
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Collection</a>
+    <a href="#">FAQ</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <p class="footer-copy">
+    © 2025 BY_SK – Tous droits réservés
+  </p>
+</footer>
+
+
+</body>
+<script>
+  const reveal = document.querySelector('.reveal');
+  const section = document.querySelector('.parallax-section');
+
+  window.addEventListener('scroll', () => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    /* Reveal animation */
+    if (sectionTop < windowHeight - 120) {
+      reveal.classList.add('active');
+    }
+
+    /* Parallax effect */
+    const offset = sectionTop * 0.2;
+    reveal.style.transform = `translateY(${offset}px)`;
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+
+  window.addEventListener('scroll', () => {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      const height = window.innerHeight;
+
+      if (top < height - 100) {
+        el.classList.add('active');
+      }
+    });
+  });
+
+  function openLock() {
+    document.getElementById("lockModal").style.display = "flex";
+  }
+
+  function closeLock() {
+    document.getElementById("lockModal").style.display = "none";
+  }
+</script>
+
+</html>
